@@ -30,15 +30,7 @@ public interface Indice {
 	/**
 	 * Presenta el índice sobre la consola. 
 	 */
-	default void presentarIndiceConsola() {
-		PrintWriter pw = null;
-		try {
-			pw = new PrintWriter(System.out, true);
-			presentarIndice(pw);
-		} finally {
-			if (pw != null) {
-				pw.flush(); // flush fuerza el volcado de los datos a consola
-			}
-		}		
-	}
+    default void presentarIndiceConsola() {
+	presentarIndice(new PrintWriter(System.out,true));
+    }
 }
